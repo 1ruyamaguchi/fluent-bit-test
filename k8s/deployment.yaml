@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: java-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: java-app
+  template:
+    metadata:
+      labels:
+        app: java-app
+    spec:
+      containers:
+      - name: java-containers
+        image: 1ruyamaguchi/fluent-bit-test:1
+        imagePullPolicy: IfNotPresent
+        ports: 
+        - containerPort: 8080
