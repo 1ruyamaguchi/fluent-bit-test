@@ -38,7 +38,7 @@ public class SampleServiceImpl implements SampleService {
         }
 
         // 返却用のメッセージ作成
-        String outputMessage = "We get the message '" + inputMessage + "'";
+        String outputMessage = "We get the message '" + inputMessage + "'\n";
 
         log.info("Successfully make the output message");
 
@@ -59,7 +59,8 @@ public class SampleServiceImpl implements SampleService {
         } else if (exitCode.equals("1")) {
             log.error("System exit with code 1");
         } else {
-            return "The input '" + exitCode + "' is not valid";
+            log.info("The self-destruct button is unexploded");
+            return "The input '" + exitCode + "' is not valid \n";
         }
 
         System.exit(Integer.valueOf(exitCode));
